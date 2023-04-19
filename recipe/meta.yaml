@@ -10,7 +10,7 @@ source:
   sha256: b9c9e4ae20f0febc056f58a4e395f81184a2ce4a97e1c38e4b564c10aa6f020d
 
 build:
-  number: 1
+  number: 2
   script:
     - export CFLAGS="$CFLAGS -O3 -flto -fopenmp -fvisibility=hidden -fvisibility-inlines-hidden -fno-math-errno"  # [unix]
     - export CPPFLAGS="$CPPFLAGS -O3 -DNDEBUG"  # [unix]
