@@ -10,7 +10,7 @@ source:
   sha256: b9c9e4ae20f0febc056f58a4e395f81184a2ce4a97e1c38e4b564c10aa6f020d
 
 build:
-  number: 3
+  number: 4
   script:
     - export ADRT_ADDED_CFLAGS='-O3 -flto -fopenmp -fvisibility=hidden -fvisibility-inlines-hidden -fno-math-errno'  # [unix]
     - export CFLAGS="$CFLAGS $ADRT_ADDED_CFLAGS"  # [unix]
@@ -24,6 +24,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - llvm-openmp  # [osx]
     - libgomp  # [linux]
   host:
@@ -33,7 +34,6 @@ requirements:
     - numpy
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
