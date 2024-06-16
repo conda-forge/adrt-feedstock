@@ -10,7 +10,7 @@ source:
   sha256: 70970076bc53100901687c7aaad6d4da920c0aec5f0e32da6d446400e539b881
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39]
   script:
     - export ADRT_ADDED_CFLAGS='-O3 -flto -fopenmp -fvisibility=hidden -fvisibility-inlines-hidden -fno-math-errno'  # [unix]
