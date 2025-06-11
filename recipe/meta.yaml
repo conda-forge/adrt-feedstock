@@ -1,16 +1,16 @@
 {% set name = "adrt" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 70970076bc53100901687c7aaad6d4da920c0aec5f0e32da6d446400e539b881
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: cbf1711f0790c54be5d1c9c68c2dc5e2dffad711fc0ace9240089d62e6efc533
 
 build:
-  number: 2
+  number: 0
   skip: true  # [py<39]
   script:
     - export ADRT_ADDED_CFLAGS='-O3 -flto -fopenmp -fvisibility=hidden -fvisibility-inlines-hidden -fno-math-errno'  # [unix]
